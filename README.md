@@ -38,3 +38,27 @@ powershell -ExecutionPolicy Bypass -File .\serve.ps1
 - 운세 문구 콘텐츠 파이프라인 (현재는 템플릿 풀)
 - 블로그(풍수·인테리어·사주 기초) + 서비스 단일 도메인 구성
 - 동물별 아이템 손 위치 미세 조정
+
+## 앱인토스 빌드 (2026-09-27)
+
+콘솔에 `ddiddiddi` / **오늘의 띠 캐릭터** 앱을 생성했습니다. Node.js 24에서 아래 명령을 사용하세요.
+
+```sh
+npm ci
+npm run dev
+npm run build:web
+npm run preview
+npm run build
+npm run verify:ait
+```
+
+- `prototype/index.html`이 앱 화면의 단일 원본입니다.
+- `src/platform.ts`가 토스 이미지 저장, 결과·앱 링크 공유, 위치와 뒤로가기를 연결합니다.
+- `npm run build:web`는 일반 브라우저용 `dist-web`을 만듭니다.
+- `npm run build`는 토스용 `dist`와 `ddiddiddi.ait`를 만듭니다.
+- 앱인토스에서는 이미지는 **저장**, 결과 문구와 앱 링크는 **공유** 버튼으로 제공됩니다.
+- 첫 방문은 생년을 직접 입력합니다. 로컬에 저장된 생년이 있으면 다시 보여줍니다.
+- 입력값 변경, 로딩 취소와 자정 이후 재진입을 처리합니다.
+- AIT에는 512px 캐릭터 36장만 포함하고 제작용 원본 이미지는 제외합니다.
+
+보관용 AIT와 다른 PC에서 작업하는 방법은 [release-artifacts](release-artifacts/README.md)를 참고하세요. 빌드 성공은 실제 토스 앱 검증 또는 출시 승인을 의미하지 않습니다.

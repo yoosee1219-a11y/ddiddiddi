@@ -1,0 +1,29 @@
+{
+  "name": "ddiddiddi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "postinstall": "patch-package",
+    "dev": "vite --host 127.0.0.1",
+    "dev:toss": "vite --mode toss --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "build:web": "npm run typecheck && vite build --outDir ../dist-web",
+    "build": "npm run typecheck && vite build --mode toss && ait build",
+    "preview": "vite preview --host 127.0.0.1 --outDir ../dist-web",
+    "verify:ait": "node scripts/verify-ait.mjs"
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "3.5.0"
+  },
+  "devDependencies": {
+    "@apps-in-toss/ait-format": "1.0.0",
+    "@types/node": "24.13.3",
+    "patch-package": "8.0.1",
+    "typescript": "6.0.3",
+    "vite": "8.1.4"
+  }
+}

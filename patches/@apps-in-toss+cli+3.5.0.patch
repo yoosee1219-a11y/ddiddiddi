@@ -1,0 +1,13 @@
+diff --git a/node_modules/@apps-in-toss/cli/dist/index.js b/node_modules/@apps-in-toss/cli/dist/index.js
+index 238e94a..da1dd93 100644
+--- a/node_modules/@apps-in-toss/cli/dist/index.js
++++ b/node_modules/@apps-in-toss/cli/dist/index.js
+@@ -373,7 +373,7 @@ async function getWebBundleFiles(webBundleDir) {
+ 	const filePaths = await getFilePathsInDir(webBundleDir);
+ 	const files = [];
+ 	for (const filePath of filePaths) {
+-		const name = path$1.relative(webBundleDir, filePath);
++		const name = path$1.relative(webBundleDir, filePath).split(path$1.sep).join("/");
+ 		const data = new Uint8Array(await readFile(filePath));
+ 		files.push({
+ 			name,
