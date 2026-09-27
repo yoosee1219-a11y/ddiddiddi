@@ -1,0 +1,20 @@
+{
+  "appName": "ddiddiddi",
+  "sdkVersion": "3.5.0",
+  "deploymentId": "01a0e146-f03e-785a-90e7-b0ead9a348d5",
+  "entries": 41,
+  "artifactBytes": 9066700,
+  "uncompressedBytes": 9132587,
+  "sha256": "9555b497cac3feeb1666e8de57b4fd705ba4aaa490ebb7a7562ba3b62ce9d160",
+  "permissions": [
+    {
+      "name": "photos",
+      "access": "write"
+    },
+    {
+      "name": "geolocation",
+      "access": "access"
+    }
+  ],
+  "result": "PASS"
+}
